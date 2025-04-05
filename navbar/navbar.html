@@ -1,0 +1,134 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <style>  
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+            font-family: 'Microsoft YaHei', sans-serif;  
+        }  
+
+        body {  
+            background: #fff9fb;  
+        }  
+        nav {  
+            display: flex;  
+            justify-content: space-around;  
+            align-items: center;  
+            background: #fff;  
+            padding: 1rem;  
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);  
+            position: fixed;  
+            width: 100%;  
+            top: 0;  
+            z-index: 100;  
+        }  
+
+        nav a {  
+            color: #e94b7c;  
+            text-decoration: none;  
+            padding: 0.5rem 1rem;  
+            transition: all 0.3s ease;  
+            border-radius: 20px;  
+        }  
+
+        nav a:hover {  
+            background: #f8d7e9;  
+            transform: scale(1.1);  
+        }  
+        .hero {  
+            margin-top: 80px;  
+            height: 60vh;  
+            background: linear-gradient(rgba(255,245,245,0.8), rgba(255,245,245,0.8)),   
+                        url('https://via.placeholder.com/1920x1080/ffd1dc/ffffff?text=Season of Blossoming Flowers');  
+            background-size: cover;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            animation: zoom 15s infinite alternate;  
+        }  
+
+        @keyframes zoom {  
+            0% { background-size: 100% auto; }  
+            100% { background-size: 120% auto; }  
+        }  
+
+        .products {  
+            display: grid;  
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+            gap: 2rem;  
+            padding: 2rem;  
+        }  
+
+        .product-card {  
+            background: white;  
+            padding: 1rem;  
+            border-radius: 10px;  
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);  
+            transition: transform 0.3s;  
+        }  
+
+        .product-card:hover {  
+            transform: translateY(-10px);  
+        }  
+        footer {  
+            background: #333;  
+            color: white;  
+            padding: 2rem;  
+            display: grid;  
+            grid-template-columns: repeat(3, 1fr);  
+            gap: 2rem;  
+        }  
+
+        .newsletter form {  
+            display: flex;  
+            gap: 0.5rem;  
+        }  
+
+        input[type="email"] {  
+            padding: 0.5rem;  
+            border-radius: 5px;  
+            border: none;  
+            flex-grow: 1;  
+        }  
+
+        button {  
+            background: #e94b7c;  
+            color: white;  
+            border: none;  
+            padding: 0.5rem 1rem;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+        }  
+
+        button:hover {  
+            background: #c23b62;  
+            transform: rotate(-5deg);  
+        }  
+        .video-container {  
+            width: 80%;  
+            margin: 2rem auto;  
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);  
+        }  
+        @media (max-width: 768px) {  
+            footer {  
+                grid-template-columns: 1fr;  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <nav>  
+        <a href="index.html" class="active">Home</a>  
+        <a href="about.html">About Us</a>  
+        <a href="shop.html">Online Flower Shop</a>  
+        <a href="contact.html">Contact Us</a>  
+    </nav>  
+    <div class="hero">  
+        <h1 style="color: #e94b7c; font-size: 3rem;">Let the fragrance of flowers convey your feelings 💐</h1>  
+    </div>  
+</body>  
+</html>  
