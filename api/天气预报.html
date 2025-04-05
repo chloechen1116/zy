@@ -1,0 +1,59 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Weather Query</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 20px;  
+            padding: 20px;  
+            border: 1px solid #ccc;  
+        }  
+        input {  
+            margin-right: 10px;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<h1>Weather Query</h1>  
+<input type="text" id="city" placeholder="Enter city name (e.g., beijing)">  
+<button id="getWeather">Get Weather</button>  
+
+<h2 id="result"></h2>  
+
+<script>  
+    document.getElementById('getWeather').addEventListener('click', function() {  
+        const city = document.getElementById('city').value;  
+
+        if (!city) {  
+            alert("Please enter a city name");  
+            return;  
+        }  
+
+        const apiKey = 'SSW_GbG_oecAKNWgc'; // Your API key  
+
+        // Replace with your weather API URL and request parameters  
+        const url = `https://api.seniverse.com/v3/weather/now.json?key=${apiKey}&location=${encodeURIComponent(city)}&language=en&unit=c`;  
+
+        fetch(url)  
+            .then(response => response.json())  
+            .then(data => {  
+                if (data.results && data.results.length > 0) {  
+                    const weatherInfo = data.results[0].now; // Get current weather for the first result  
+                    document.getElementById('result').innerText = `The current temperature in ${city} is ${weatherInfo.temperature}°C, and the weather condition is: ${weatherInfo.text}`;  
+                } else {  
+                    document.getElementById('result').innerText = 'Unable to retrieve weather data';  
+                }  
+            })  
+            .catch(error => {  
+                console.error('Error fetching weather:', error);  
+                document.getElementById('result').innerText = 'Error retrieving data';  
+            });  
+    });  
+</script>  
+
+</body>  
+</html>  
